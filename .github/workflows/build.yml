@@ -10,21 +10,40 @@ jobs:
       DIR: .
       FILE: resume
       FILENAME: JoaoLimaResumeEN
+      FILEPT: resumePT
+      FILENAMEPT: JoaoLimaResumePT
     steps:
       - name: Set up Git repository
         uses: actions/checkout@v4
-      - name: resume
+
+      # --- EN Resume ---
+      - name: Compile EN resume
         uses: dante-ev/latex-action@latest
         with:
           root_file: ${{ env.FILE }}
           working_directory: ${{ env.DIR }}
-      - name: move
-        run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/
-      - name: Upload pdf as artifact
+      - name: Move EN resume
+        run: mkdir -p github_artifacts && mv ${{ env.DIR }}/${{ env.FILE }}.pdf ./github_artifacts/${{ env.FILENAME }}.pdf
+      - name: Upload EN resume
         uses: actions/upload-artifact@v4
         with:
           name: ${{ env.FILENAME }}.pdf
-          path: ./github_artifacts
+          path: ./github_artifacts/${{ env.FILENAME }}.pdf
+
+      # --- PT Resume ---
+      - name: Compile PT resume
+        uses: dante-ev/latex-action@latest
+        with:
+          root_file: ${{ env.FILEPT }}
+          working_directory: ${{ env.DIR }}
+      - name: Move PT resume
+        run: mv ${{ env.DIR }}/${{ env.FILEPT }}.pdf ./github_artifacts/${{ env.FILENAMEPT }}.pdf
+      - name: Upload PT resume
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.FILENAMEPT }}.pdf
+          path: ./github_artifacts/${{ env.FILENAMEPT }}.pdf
+
   deploy:
     needs: [build]
     runs-on: ubuntu-latest
@@ -34,9 +53,9 @@ jobs:
       - uses: actions/download-artifact@v4
         with:
           path: github_artifacts
-      - name: move
+      - name: Move all artifacts into deploy folder
         run: mkdir -p github_deploy && mv github_artifacts/*/* github_deploy
-      - name: deploy on orphan branch
+      - name: Deploy on orphan branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -44,15 +63,3 @@ jobs:
           publish_branch: build
           force_orphan: true
           enable_jekyll: true
-  copy-index-to-build:
-    needs: [deploy]
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-      - name: Copy To Branches Action
-        uses: planetoftheweb/copy-to-branches@v1.3
-        env:
-          key: main
-          files: index.html CNAME
