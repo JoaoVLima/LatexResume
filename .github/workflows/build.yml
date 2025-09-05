@@ -55,10 +55,11 @@ jobs:
           path: github_artifacts
       - name: Move all artifacts into deploy folder
         run: mkdir -p github_deploy && mv github_artifacts/*/* github_deploy
-      - name: Deploy on orphan branch
+      - name: Deploy on build branch
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./github_deploy
           publish_branch: build
+          keep_files: true
           enable_jekyll: true
