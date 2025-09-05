@@ -6,41 +6,81 @@
 %	DOCUMENT DEFINITION
 %---------------------------------------------------------------------------------%
 
+% article class because we want to fully customize the page and not use a cv template
 \documentclass[a4paper,12pt]{article}
 
 %---------------------------------------------------------------------------------%
 %	FONT
 %---------------------------------------------------------------------------------%
 
+% \usepackage[sfdefault,light,medium]{josefin}
+
+% \usepackage{noto}
+% \renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
+
+% \usepackage[sfdefault]{noto}
+
+% \usepackage[sfdefault,light,condensed]{roboto}  %% Option 'sfdefault' only if the base font of the document is to be sans serif
+
+% \usepackage[sfdefault,light]{roboto}  %% Option 'sfdefault' only if the base font of the document is to be sans serif
+
 \usepackage[T1]{fontenc}
 \usepackage[sfdefault,light,medium]{roboto}
 \renewcommand{\bfseries}{\fontseries{m}\selectfont} % medium instead of bold
+
 
 %---------------------------------------------------------------------------------%
 %	PACKAGES
 %---------------------------------------------------------------------------------%
 \usepackage{url}
 \usepackage{parskip}
+
+%other packages for formatting
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[scale=0.9]{geometry}
+
+%tabularx environment
 \usepackage{tabularx}
+
+%for lists within experience section
 \usepackage{enumitem}
+
+% centered version of 'X' col. type
 \newcolumntype{C}{>{\centering\arraybackslash}X}
+
+%to prevent spillover of tabular into next pages
 \usepackage{supertabular}
 \newlength{\fullcollw}
 \setlength{\fullcollw}{0.47\textwidth}
+
+%custom \section
 \usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
+
+%CV Sections inspired by:
+%http://stefano.italians.nl/archives/26
+\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
+\titlespacing{\section}{0pt}{10pt}{10pt}
+
+%for publications
 \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+
+%Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
 \addbibresource{citations.bib}
 \setlength\bibitemsep{1em}
+
+%for social icons
 \usepackage{fontawesome5}
+
+%debug page outer frames
+%\usepackage{showframe}
+
 
 % job listing environments
 \newenvironment{jobshort}[2]
@@ -71,16 +111,24 @@
     \end{itemize}
 }
 
+
 %---------------------------------------------------------------------------------%
 %	BEGIN DOCUMENT
 %---------------------------------------------------------------------------------%
 \begin{document}
 
+% non-numbered pages
     \pagestyle{empty}
 
 %---------------------------------------------------------------------------------%
 %	TITLE
 %---------------------------------------------------------------------------------%
+
+% \begin{tabularx}{\linewidth}{ @{}X X@{} }
+% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
+% \raisebox{-0.05\height}\faGithub\ username \ | \
+% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
+% \end{tabularx}
 
     \begin{tabularx}{\linewidth}{@{} C @{}}
         \Huge{Joao Lima} \href{https://limadeveloper.com}{\raisebox{-0.05\height}\ (limadeveloper.com)} \ \\[7.5pt]
@@ -91,17 +139,33 @@
     \end{tabularx}
 
 %---------------------------------------------------------------------------------%
+% SECTIONS
+%---------------------------------------------------------------------------------%
+
+%---------------------------------------------------------------------------------%
 % SUMMARY
 %---------------------------------------------------------------------------------%
 
+
     \section{Resumo}
-    \textbf{Mais de 4 anos de experiência} construindo soluções de back-end e front-end para plataformas de e-Commerce, varejo e BI. Habilidade em \textit{Python (Django)}, \textit{JavaScript/TypeScript}, \textit{PostgreSQL}, \textit{cloud (AWS/GCP)}, \textit{ETL (Pentaho)}, \textit{integrações REST API} e \textit{sistemas distribuídos}. Apaixonado por entregar produtos escaláveis que geram resultados de negócio, com contribuições em soluções utilizadas por grandes varejistas e empresas automotivas brasileiras.
+    \textbf{Mais de 4 anos de experiência} construindo soluções de back-end e front-end para plataformas de e-Commerce, varejo e BI. Habilidade em \textit{Python (Django)}, \textit{JavaScript/TypeScript}, \textit{PostgreSQL}, \textit{cloud (AWS/GCP)}, \textit{ETL (Pentaho)}, \textit{integrações REST API} e \textit{sistemas distribuídos}. Entrego produtos escaláveis que geram resultados de negócio, com contribuições em soluções utilizadas por grandes varejistas e empresas automotivas brasileiras.
 
 %---------------------------------------------------------------------------------%
 % WORK EXPERIENCE
 %---------------------------------------------------------------------------------%
 
+
     \section{Experiência Profissional}
+
+    % \begin{joblong}{Front-End Developer}{2025}
+    % \href{https://www.fidentech.com}{\textbf{FidenTech}} provides digital transformation services for \textit{Brazilian fashion retail stores}, focusing on consulting, Oracle Retail, and Merchandise Financial Planning (MFP).
+    % \begin{bullets}
+    % \item Delivered dynamic user interfaces and interactive tools for fashion retailers to optimize demand forecasting, product assortment, and pricing strategies.
+    % \item Supported top brands like Grupo Netshoes (Zattini, Shoestock) with \textit{Oracle-based e-commerce and retail planning tools}.
+    % \item Enabled \textit{data-driven pricing and assortment decisions}, leveraging predictive models to maintain price consistency across regions and maximize margins.
+    % \item \textbf{Stack:} \textit{Oracle APEX, JavaScript, HTML, CSS, Responsive Design.}
+    % \end{bullets}
+    % \end{joblong}
 
     \begin{joblong}{Engenheiro de Software}{2024 - 2025}
         \href{https://ravpro.com.br}{\textbf{Ravpro}} fornece \textit{soluções de software para concessionárias de automóveis em todo o Brasil}. A empresa atende algumas das \textit{maiores concessionárias de carros e caminhões do país}.
@@ -126,21 +190,42 @@
 % PROJECTS
 %---------------------------------------------------------------------------------%
 
+
     \section{Projetos}
     \begin{tabularx}{\linewidth}{ @{}l r@{} }
         \textbf{TodoApp-Java (Java + Spring Boot)} & \hfill \href{https://github.com/JoaoVLima/TodoApp-Java}{Link do Repositório} \\[3.75pt]
-        \multicolumn{2}{@{}X@{}}{Aplicativo CRUD de tarefas implementado com Java Spring Boot, incluindo APIs RESTful, JPA para acesso ao banco de dados e injeção de dependência. Desenvolvido como parte de uma comparação multi-framework (Laravel, Rails, Scotty, .NET), destacando diferenças arquiteturais e experiência do desenvolvedor.} \\
+        \multicolumn{2}{@{}X@{}}{Aplicativo CRUD de tarefas implementado com Java Spring Boot, incluindo APIs RESTful, JPA para acesso ao banco de dados e injeção de dependência. Desenvolvido como parte de uma comparação multi-framework (Laravel, Rails, Scotty, .NET), destacando diferenças arquiteturais.} \\
     \end{tabularx}
 
+
 %---------------------------------------------------------------------------------%
-% EDUCATION
+%	EDUCATION
 %---------------------------------------------------------------------------------%
+
 
     \section{Educação}
     \begin{tabularx}{\linewidth}{@{}l X@{}}
         2023 -- 2026 & Bacharelado em Ciência da Computação, \textbf{Pontifícia Universidade Católica do Paraná (\href{https://www.pucpr.br}{PUCPR})} \\
         2016 -- 2018 & Curso Técnico em Tecnologia da Informação, \textbf{Centro Vocacional Irmão Mário Cristóvão (\href{http://www.tecpuc.com.br}{TECPUC})} \\
     \end{tabularx}
+
+%---------------------------------------------------------------------------------%
+%	PUBLICATIONS
+%---------------------------------------------------------------------------------%
+% \section{Publications}
+% \begin{refsection}[citations.bib]
+% \nocite{*}
+% \printbibliography[heading=none]
+% \end{refsection}
+
+%---------------------------------------------------------------------------------%
+%	SKILLS
+%---------------------------------------------------------------------------------%
+% \section{Skills}
+% \begin{tabularx}{\linewidth}{@{}l X@{}}
+% Technical Skills & Python (Django), Java, C\#, JavaScript, TypeScript, Node.js, React, PostgreSQL, MySQL, Redis, MongoDB, Pentaho (ETL), REST API, Swagger, Git, Linux, Three.js, HTML/CSS, Bootstrap, Vite.js, AWS, GCP. \\
+% Professional Skills & Problem-Solving, Agile Scrum, System Integration, Data Modeling, CI/CD, API Design, Distributed Systems, BI Solutions. \\
+% \end{tabularx}
 
 %---------------------------------------------------------------------------------%
 % EOF
