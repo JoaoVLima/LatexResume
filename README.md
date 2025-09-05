@@ -4,6 +4,7 @@
 
 Uma template de currículo limpa, elegante e profissional em LaTeX. Baseada no projeto `jitinnair1/autoCV`, foi adaptada para minhas necessidades.
 [overleaf](https://www.overleaf.com/read/kwgjzvjjkbzv#fa658f)
+
 ---
 
 ## Funcionalidades
