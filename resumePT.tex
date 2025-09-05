@@ -1,54 +1,39 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
-%
-%	Copyright (c) 2021 Jitin Nair
-%
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%	
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%	
-%
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
+%---------------------------------------------------------------------------------%
+%	Template from https://github.com/jitinnair1/autoCV
+%---------------------------------------------------------------------------------%
 
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------%
 %	DOCUMENT DEFINITION
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------%
 
 % article class because we want to fully customize the page and not use a cv template
 \documentclass[a4paper,12pt]{article}
 
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------%
 %	FONT
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------%
 
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
+% \usepackage[sfdefault,light,medium]{josefin}
 
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
+% \usepackage{noto}
+% \renewcommand*\familydefault{\ttdefault} %% Only if the base font of the document is to be typewriter style
 
-%----------------------------------------------------------------------------------------
+% \usepackage[sfdefault]{noto}
+
+% \usepackage[sfdefault,light,condensed]{roboto}  %% Option 'sfdefault' only if the base font of the document is to be sans serif
+
+% \usepackage[sfdefault,light]{roboto}  %% Option 'sfdefault' only if the base font of the document is to be sans serif
+
+\usepackage[T1]{fontenc}
+\usepackage[sfdefault,light,medium]{roboto}
+\renewcommand{\bfseries}{\fontseries{m}\selectfont} % medium instead of bold
+
+
+%---------------------------------------------------------------------------------%
 %	PACKAGES
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------%
 \usepackage{url}
-\usepackage{parskip} 	
+\usepackage{parskip}
 
 %other packages for formatting
 \RequirePackage{color}
@@ -63,20 +48,19 @@
 \usepackage{enumitem}
 
 % centered version of 'X' col. type
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
+\newcolumntype{C}{>{\centering\arraybackslash}X}
 
 %to prevent spillover of tabular into next pages
 \usepackage{supertabular}
-\usepackage{tabularx}
 \newlength{\fullcollw}
 \setlength{\fullcollw}{0.47\textwidth}
 
 %custom \section
-\usepackage{titlesec}				
+\usepackage{titlesec}
 \usepackage{multicol}
 \usepackage{multirow}
 
-%CV Sections inspired by: 
+%CV Sections inspired by:
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
@@ -100,40 +84,45 @@
 
 % job listing environments
 \newenvironment{jobshort}[2]
-    {
+{
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+        \textbf{#1} & \hfill &  #2 \\[3.75pt]
     \end{tabularx}
-    }
-    {
-    }
+        }
+        {
+}
 
 \newenvironment{joblong}[2]
-    {
+{
     \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
+        \textbf{#1} & \hfill & #2 \\[3.75pt]
     \end{tabularx}
     \begin{minipage}[t]{\linewidth}
+    }
+    {
+    \end{minipage}
+}
+
+\newenvironment{bullets}
+{
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
     }
     {
     \end{itemize}
-    \end{minipage}    
-    }
+}
 
 
-
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------%
 %	BEGIN DOCUMENT
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------%
 \begin{document}
 
 % non-numbered pages
-\pagestyle{empty} 
+    \pagestyle{empty}
 
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------%
 %	TITLE
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------%
 
 % \begin{tabularx}{\linewidth}{ @{}X X@{} }
 % \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
@@ -141,77 +130,108 @@
 % \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
 % \end{tabularx}
 
-\begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Your nome} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
-\end{tabularx}
+    \begin{tabularx}{\linewidth}{@{} C @{}}
+        \Huge{Joao Lima} \href{https://limadeveloper.com}{\raisebox{-0.05\height}\ (limadeveloper.com)} \ \\[7.5pt]
+        \href{https://github.com/JoaoVLima}{\raisebox{-0.05\height}\faGithub\ JoaoVLima} \ $|$ \
+        \href{https://linkedin.com/in/limadeveloper}{\raisebox{-0.05\height}\faLinkedin\ limadeveloper} \ $|$ \
+        \href{mailto:joao@limadeveloper.com}{\raisebox{-0.05\height}\faEnvelope \ joao@limadeveloper.com} \ $|$ \
+        \href{tel:+5541996277071}{\raisebox{-0.05\height}\faMobile \ +55 (41) 99627-7071} \\
+    \end{tabularx}
 
-%----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------%
+% SECTIONS
+%---------------------------------------------------------------------------------%
 
-%Interests/ Keywords/ Summary
-\section{Summary}
-This CV can also be automatically complied and published using GitHub Actions. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
-
-%Experience
-\section{Work Experience}
-
-\begin{jobshort}{Teste}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
+%---------------------------------------------------------------------------------%
+% SUMMARY
+%---------------------------------------------------------------------------------%
 
 
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
-\end{joblong}
-  
-%Projects
-\section{Projects}
+    \section{Resumo}
+    \textbf{Mais de 4 anos de experiência} construindo soluções de back-end e front-end para plataformas de e-Commerce, varejo e BI. Habilidade em \textit{Python (Django)}, \textit{JavaScript/TypeScript}, \textit{PostgreSQL}, \textit{cloud (AWS/GCP)}, \textit{ETL (Pentaho)}, \textit{integrações REST API} e \textit{sistemas distribuídos}. Entrego produtos escaláveis que geram resultados de negócio, com contribuições em soluções utilizadas por grandes varejistas e empresas automotivas brasileiras.
 
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
-\end{tabularx}
+%---------------------------------------------------------------------------------%
+% WORK EXPERIENCE
+%---------------------------------------------------------------------------------%
 
-%----------------------------------------------------------------------------------------
+
+    \section{Experiência Profissional}
+
+    % \begin{joblong}{Front-End Developer}{2025}
+    % \href{https://www.fidentech.com}{\textbf{FidenTech}} provides digital transformation services for \textit{Brazilian fashion retail stores}, focusing on consulting, Oracle Retail, and Merchandise Financial Planning (MFP).
+    % \begin{bullets}
+    % \item Delivered dynamic user interfaces and interactive tools for fashion retailers to optimize demand forecasting, product assortment, and pricing strategies.
+    % \item Supported top brands like Grupo Netshoes (Zattini, Shoestock) with \textit{Oracle-based e-commerce and retail planning tools}.
+    % \item Enabled \textit{data-driven pricing and assortment decisions}, leveraging predictive models to maintain price consistency across regions and maximize margins.
+    % \item \textbf{Stack:} \textit{Oracle APEX, JavaScript, HTML, CSS, Responsive Design.}
+    % \end{bullets}
+    % \end{joblong}
+
+    \begin{joblong}{Engenheiro de Software}{2024 - 2025}
+        \href{https://ravpro.com.br}{\textbf{Ravpro}} fornece \textit{soluções de software para concessionárias de automóveis em todo o Brasil}. A empresa atende algumas das \textit{maiores concessionárias de carros e caminhões do país}.
+        \begin{bullets}
+            \item \textbf{Desenvolvimento de funcionalidades de backend e frontend} para o RavMenu Web, aumentando oportunidades de upsell e melhorando a tomada de decisão do cliente.
+            \item Desenvolveu e manteve \textbf{integrações de sistema e pipelines ETL para sincronização em tempo real} de dados de veículos, estoque de peças e agendamento de manutenção, bem como extração de dados para sistemas de \textit{Business Intelligence (BI)}.
+            \item Aprimorou habilidades de resolução de problemas e manteve \textbf{comunicação clara e assertiva com equipe e clientes}, seguindo princípios ágeis \textit{Scrum}.
+            \item \textbf{Stack:} \textit{React, NodeJS, Python, PostgreSQL, MongoDB, AWS, Pentaho (ETL).}
+        \end{bullets}
+    \end{joblong}
+
+    \begin{joblong}{Programador Back-End (Pleno)}{2021 - 2023}
+        \href{https://inteliger.com.br}{\textbf{Inteliger}} é especialista em \textbf{e-Commerce}, soluções de varejo com IA e sistemas de \textbf{Business Intelligence (BI) para monitorar vendas, estoque e KPIs operacionais} de grandes redes de farmácias no Brasil.
+        \begin{bullets}
+            \item \textbf{Atuei como desenvolvedor principal do projeto Amplius (BI)} e contribui em mais de 10 projetos, desde integrações de pagamento e delivery até desenvolvimento de sistemas de logs e histórico de pedidos.
+            \item Desenvolveu e manteve a plataforma omnichannel Venda Mais (Voai), \textbf{permitindo às farmácias unificar operações de e-commerce, marketplace e televendas}.
+            \item \textbf{Stack:} \textit{Python, Django, PostgreSQL, Redis, Pentaho (ETL), Google Cloud Platform (GCP).}
+        \end{bullets}
+    \end{joblong}
+
+%---------------------------------------------------------------------------------%
+% PROJECTS
+%---------------------------------------------------------------------------------%
+
+
+    \section{Projetos}
+    \begin{tabularx}{\linewidth}{ @{}l r@{} }
+        \textbf{TodoApp-Java (Java + Spring Boot)} & \hfill \href{https://github.com/JoaoVLima/TodoApp-Java}{Link do Repositório} \\[3.75pt]
+        \multicolumn{2}{@{}X@{}}{Aplicativo CRUD de tarefas implementado com Java Spring Boot, incluindo APIs RESTful, JPA para acesso ao banco de dados e injeção de dependência. Desenvolvido como parte de uma comparação multi-framework (Laravel, Rails, Scotty, .NET), destacando diferenças arquiteturais.} \\
+    \end{tabularx}
+
+
+%---------------------------------------------------------------------------------%
 %	EDUCATION
-%----------------------------------------------------------------------------------------
-\section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
+%---------------------------------------------------------------------------------%
 
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
 
-2022 & Class 12th Some Board \hfill  (Grades) \\
+    \section{Educação}
+    \begin{tabularx}{\linewidth}{@{}l X@{}}
+        2023 -- 2026 & Bacharelado em Ciência da Computação, \textbf{Pontifícia Universidade Católica do Paraná (\href{https://www.pucpr.br}{PUCPR})} \\
+        2016 -- 2018 & Curso Técnico em Tecnologia da Informação, \textbf{Centro Vocacional Irmão Mário Cristóvão (\href{http://www.tecpuc.com.br}{TECPUC})} \\
+    \end{tabularx}
 
-2021 & Class 10th Some Board \hfill  (Grades) \\
-\end{tabularx}
-
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------%
 %	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
+%---------------------------------------------------------------------------------%
+% \section{Publications}
+% \begin{refsection}[citations.bib]
+% \nocite{*}
+% \printbibliography[heading=none]
+% \end{refsection}
 
-%----------------------------------------------------------------------------------------
+%---------------------------------------------------------------------------------%
 %	SKILLS
-%----------------------------------------------------------------------------------------
-\section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
-\end{tabularx}
+%---------------------------------------------------------------------------------%
+% \section{Skills}
+% \begin{tabularx}{\linewidth}{@{}l X@{}}
+% Technical Skills & Python (Django), Java, C\#, JavaScript, TypeScript, Node.js, React, PostgreSQL, MySQL, Redis, MongoDB, Pentaho (ETL), REST API, Swagger, Git, Linux, Three.js, HTML/CSS, Bootstrap, Vite.js, AWS, GCP. \\
+% Professional Skills & Problem-Solving, Agile Scrum, System Integration, Data Modeling, CI/CD, API Design, Distributed Systems, BI Solutions. \\
+% \end{tabularx}
 
-\vfill
-\center{\footnotesize Last updated: \today}
+%---------------------------------------------------------------------------------%
+% EOF
+%---------------------------------------------------------------------------------%
+
+    \vfill
+    \center{\footnotesize Última atualização: \today}
 
 \end{document}
