@@ -1,7 +1,8 @@
 %---------------------------------------------------------------------------------%
 %	Template from https://github.com/jitinnair1/autoCV
 %---------------------------------------------------------------------------------%
-
+% tirar resumo empresas
+% adicionar skill e softskill
 %---------------------------------------------------------------------------------%
 %	DOCUMENT DEFINITION
 %---------------------------------------------------------------------------------%
@@ -40,6 +41,9 @@
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[scale=0.9]{geometry}
+\usepackage[none]{hyphenat}
+\emergencystretch=1em
+
 
 %tabularx environment
 \usepackage{tabularx}
@@ -112,6 +116,8 @@
 }
 
 
+
+
 %---------------------------------------------------------------------------------%
 %	BEGIN DOCUMENT
 %---------------------------------------------------------------------------------%
@@ -146,48 +152,41 @@
 % SUMMARY
 %---------------------------------------------------------------------------------%
 
-%Interests/ Keywords/ Summary
-
 
     \section{Summary}
-    \textbf{4+ years of experience} building back-end and front-end solutions for e-Commerce, retail, and BI platforms. Skilled in \textit{Python (Django)}, \textit{JavaScript/TypeScript}, \textit{PostgreSQL}, and \textit{cloud (AWS/GCP)}, \textit{ETL(Pentaho)}, \textit{REST API integrations}, and \textit{distributed systems}. Passionate about delivering scalable products that drive business results, having contributed to solutions used by major Brazilian retailers and automotive companies.
+    Back-End Developer with 4+ years of experience building scalable and reliable applications using \textbf{Python (Django)}, REST APIs, and data integration pipelines. Skilled in relational and NoSQL databases, system integration, and cloud platforms (AWS, GCP). Strong background in e-commerce, retail, and BI solutions. Passionate about delivering clean, maintainable code and collaborating in agile teams to design distributed systems and improve data-driven products.
+
 
 %---------------------------------------------------------------------------------%
 % WORK EXPERIENCE
 %---------------------------------------------------------------------------------%
 
 
-    \section{Work Experience}
+    \section{WORK EXPERIENCE}
 
-% \begin{joblong}{Front-End Developer}{2025}
-% \href{https://www.fidentech.com}{\textbf{FidenTech}} provides digital transformation services for \textit{Brazilian fashion retail stores}, focusing on consulting, Oracle Retail, and Merchandise Financial Planning (MFP).
-% \begin{bullets}
-% \item Delivered dynamic user interfaces and interactive tools for fashion retailers to optimize demand forecasting, product assortment, and pricing strategies.
-% \item Supported top brands like Grupo Netshoes (Zattini, Shoestock) with \textit{Oracle-based e-commerce and retail planning tools}.
-% \item Enabled \textit{data-driven pricing and assortment decisions}, leveraging predictive models to maintain price consistency across regions and maximize margins.
-% \item \textbf{Stack:} \textit{Oracle APEX, JavaScript, HTML, CSS, Responsive Design.}
-% \end{bullets}
-% \end{joblong}
+    % \begin{joblong}{Front-End Developer | \href{https://www.fidentech.com}{\textbf{FidenTech}}}{2025}
+    % \begin{bullets}
+    % \item Os clientes enfrentavam dificuldades em manter previsões de demanda confiáveis e consistência de preços entre diferentes regiões. Diante desse cenário, minha responsabilidade foi criar interfaces e ferramentas de apoio à análise e ao planejamento de preços.
+    % \item Como resultado, apoiei clientes do Grupo Netshoes a terem uma maior consistência de preços entre regiões e ganhos de margem.
+    % \item \textbf{Stack:} \textit{Oracle APEX, JavaScript (ES6+), HTML5, CSS3, responsividade e integração com APIs REST.}
+    % \end{bullets}
+    % \end{joblong}
 
-    \begin{joblong}{Software Engineer}{2024 - 2025}
-        \href{https://ravpro.com.br}{\textbf{Ravpro}} delivers \textit{software solutions tailored for car dealerships across Brazil}. The company supplies solutions to some of the \textit{largest car and truck dealerships in Brazil}.
+    \begin{joblong}{Software Engineer | \href{https://ravpro.com.br}{\textbf{Ravpro}}}{2024 -- 2025}
         \begin{bullets}
-            \item \textbf{Engineered backend and frontend features} for RavMenu Web, enhancing upselling opportunities and improving customer decision-making at high-volume dealerships.
-            \item Developed and maintained system \textbf{integrations and ETL pipelines for real-time synchronization} of vehicle data, parts inventory, and maintenance scheduling,
-            as well as data retrieval for \textit{Business Intelligence (BI) systems}.
-            \item Strengthened problem-solving skills and maintained clear, \textbf{assertive communication with team members and clients}, working within agile \textit{Scrum} principles.
-            \item \textbf{Stack:} \textit{React, NodeJS, Python, PostgreSQL, MongoDB, AWS, Pentaho (ETL).}
+            \item Developed REST APIs and backend features with Python (Django) and Node.js, ensuring high performance and reliability.
+            \item Optimized PostgreSQL queries and ETL pipelines for real-time data integration.
+            \item Participated in system architecture design, working in agile teams following Scrum practices.
+            \item \textbf{Stack:} \textit{Python (Django), Node.js, React, PostgreSQL, MongoDB, AWS, Pentaho (ETL)}
         \end{bullets}
     \end{joblong}
 
-    \begin{joblong}{Back-End Programmer (Mid-Level)}{2021 - 2023}
-        \href{https://inteliger.com.br}{\textbf{Inteliger}} specializes in \textbf{e-Commerce}, AI-powered retail solutions and Business Intelligence (BI) \textbf{systems to monitor e-Commerce sales}, inventory, and operational KPIs for \textbf{major pharmacy chains across Brazil}.
+    \begin{joblong}{Back-End Developer (Mid-level) | \href{https://inteliger.com.br}{\textbf{Inteliger}}}{2021 -- 2023}
         \begin{bullets}
-            \item \textbf{Served as principal developer for Amplius (BI) project} and \textbf{contributed to over 10 projects}, ranging from payment and third-party delivery integrations to developing a logging and order history system.
-% \item \textbf{Responsible for backend development and maintenance}, integrations, and system improvements, while enhancing problem-solving abilities and fostering
-% smooth communication with team members and clients under agile Scrum methodology.
-            \item Developed and maintained Inteliger’s Venda Mais (Voai) omnichannel platform, \textbf{enabling pharmacies to unify e-commerce, marketplace, and telesales operations}.
-            \item \textbf{Stack:} \textit{Python, Django, PostgreSQL, Redis, Pentaho (ETL), Google Cloud Platform (GCP).}
+            \item Lead developer of Amplius (BI platform), creating logging systems, order history, and data integrations for pharmacy retail.
+            \item Implemented scalable REST APIs and improved performance with PostgreSQL and Redis.
+            \item Built ETL pipelines and real-time reporting for strategic business decisions.
+            \item \textbf{Stack:} \textit{Python (Django), PostgreSQL, Redis, Pentaho (ETL), GCP, REST APIs}
         \end{bullets}
     \end{joblong}
 
@@ -196,47 +195,42 @@
 %---------------------------------------------------------------------------------%
 
 
-    \section{Projects}
-    \begin{tabularx}{\linewidth}{ @{}l r@{} }
-        \textbf{TodoApp-Java (Java + Spring Boot)} & \hfill \href{https://github.com/JoaoVLima/TodoApp-Java}{Link to Repo} \\[3.75pt]
-        \multicolumn{2}{@{}X@{}}{A CRUD Todo application implemented with Java Spring Boot, featuring RESTful APIs, JPA for database access, and dependency injection. Built as part of a multi-framework comparison (Laravel, Rails, Scotty, .NET), it highlights architectural and developer-experience differences.}\\
-    \end{tabularx}
+    % \section{Projetos}
+    % \begin{tabularx}{\linewidth}{ @{}l r@{} }
+    %     \textbf{TodoApp-Java (Java + Spring Boot)} & \hfill \href{https://github.com/JoaoVLima/TodoApp-Java}{Link do Repositório} \\[3.75pt]
+    %     \multicolumn{2}{@{}X@{}}{Aplicativo CRUD de tarefas implementado com Java Spring Boot, incluindo APIs RESTful, JPA para acesso ao banco de dados e injeção de dependência. Desenvolvido como parte de uma comparação multi-framework (Laravel, Rails, Scotty, .NET), destacando diferenças arquiteturais.} \\
+    % \end{tabularx}
 
 
 %---------------------------------------------------------------------------------%
-%	EDUCATION
+%   EDUCATION
 %---------------------------------------------------------------------------------%
-
-
     \section{Education}
     \begin{tabularx}{\linewidth}{@{}l X@{}}
-        2023 -- 2026 & B.Sc. in Computer Science, \textbf{Pontifical Catholic University of Paraná (\href{https://www.pucpr.br}{PUCPR})} \\
-        2016 -- 2018 & Technical Diploma in Information Technology, \textbf{Brother Mário Cristóvão Vocational Education Center (\href{http://www.tecpuc.com.br}{TECPUC})} \\
+        2023 -- Present & B.Sc. in Computer Science, \href{https://www.pucpr.br}{\textbf{Pontifícia Universidade Católica do Paraná}} \\
+        2016 -- 2018 & Technical Degree in IT, \href{http://www.tecpuc.com.br}{\textbf{Centro Profissional Irmão Mário Cristóvão}} \\
+        2013 -- 2017 & Advanced English Course, \href{http://www.influx.com.br}{\textbf{inFlux English School}} \\
     \end{tabularx}
 
 %---------------------------------------------------------------------------------%
-%	PUBLICATIONS
+%   SKILLS
 %---------------------------------------------------------------------------------%
-% \section{Publications}
-% \begin{refsection}[citations.bib]
-% \nocite{*}
-% \printbibliography[heading=none]
-% \end{refsection}
-
-%---------------------------------------------------------------------------------%
-%	SKILLS
-%---------------------------------------------------------------------------------%
-% \section{Skills}
-% \begin{tabularx}{\linewidth}{@{}l X@{}}
-% Technical Skills & Python (Django), Java, C\#, JavaScript, TypeScript, Node.js, React, PostgreSQL, MySQL, Redis, MongoDB, Pentaho (ETL), REST API, Swagger, Git, Linux, Three.js, HTML/CSS, Bootstrap, Vite.js, AWS, GCP. \\
-% Professional Skills & Problem-Solving, Agile Scrum, System Integration, Data Modeling, CI/CD, API Design, Distributed Systems, BI Solutions. \\
-% \end{tabularx}
+    \section{Skills}
+    \begin{tabularx}{\linewidth}{@{}l X@{}}
+        Programming & Python (Django), Node.js, TypeScript, JavaScript, Java \\
+        Frameworks & Django, React, SpringBoot \\
+        Databases & PostgreSQL, MongoDB, MySQL, Redis \\
+        Data / ETL & Pentaho (ETL), Data Modeling, BI Solutions \\
+        APIs & REST API Design, Documentation (Swagger), System Integration \\
+        Cloud / DevOps & AWS, GCP, Linux, Git, CI/CD \\
+        Soft Skills & Problem-Solving, Agile Scrum, Distributed Systems, Collaboration, Documentation \\
+    \end{tabularx}
 
 %---------------------------------------------------------------------------------%
 % EOF
 %---------------------------------------------------------------------------------%
 
     \vfill
-    \center{\footnotesize Last updated: \today}
+    \center{\footnotesize Última atualização: \today}
 
 \end{document}
