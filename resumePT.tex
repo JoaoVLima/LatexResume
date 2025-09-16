@@ -1,7 +1,8 @@
 %---------------------------------------------------------------------------------%
 %	Template from https://github.com/jitinnair1/autoCV
 %---------------------------------------------------------------------------------%
-
+% tirar resumo empresas
+% adicionar skill e softskill
 %---------------------------------------------------------------------------------%
 %	DOCUMENT DEFINITION
 %---------------------------------------------------------------------------------%
@@ -40,6 +41,9 @@
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[scale=0.9]{geometry}
+\usepackage[none]{hyphenat}
+\emergencystretch=1em
+
 
 %tabularx environment
 \usepackage{tabularx}
@@ -148,7 +152,7 @@
 
 
     \section{Resumo}
-    \textbf{Mais de 4 anos de experiência} construindo soluções de back-end e front-end para plataformas de e-Commerce, varejo e BI. Habilidade em \textit{Python (Django)}, \textit{JavaScript/TypeScript}, \textit{PostgreSQL}, \textit{cloud (AWS/GCP)}, \textit{ETL (Pentaho)}, \textit{integrações REST API} e \textit{sistemas distribuídos}. Entrego produtos escaláveis que geram resultados de negócio, com contribuições em soluções utilizadas por grandes varejistas e empresas automotivas brasileiras.
+    Desenvolvedor backend com mais de 4 anos de experiência. Habilidades em Node.js/TypeScript, PostgreSQL, MongoDB e integrações REST API. Experiência em sistemas distribuídos, pipelines ETL e soluções escaláveis para e-commerce, varejo e BI. Entrego código confiável, otimizado e integrado a plataformas utilizadas por grandes empresas brasileiras.
 
 %---------------------------------------------------------------------------------%
 % WORK EXPERIENCE
@@ -157,32 +161,29 @@
 
     \section{Experiência Profissional}
 
-    % \begin{joblong}{Front-End Developer}{2025}
-    % \href{https://www.fidentech.com}{\textbf{FidenTech}} provides digital transformation services for \textit{Brazilian fashion retail stores}, focusing on consulting, Oracle Retail, and Merchandise Financial Planning (MFP).
+    % \begin{joblong}{Front-End Developer | \href{https://www.fidentech.com}{\textbf{FidenTech}}}{2025}
     % \begin{bullets}
-    % \item Delivered dynamic user interfaces and interactive tools for fashion retailers to optimize demand forecasting, product assortment, and pricing strategies.
-    % \item Supported top brands like Grupo Netshoes (Zattini, Shoestock) with \textit{Oracle-based e-commerce and retail planning tools}.
-    % \item Enabled \textit{data-driven pricing and assortment decisions}, leveraging predictive models to maintain price consistency across regions and maximize margins.
-    % \item \textbf{Stack:} \textit{Oracle APEX, JavaScript, HTML, CSS, Responsive Design.}
+    % \item Os clientes enfrentavam dificuldades em manter previsões de demanda confiáveis e consistência de preços entre diferentes regiões. Diante desse cenário, minha responsabilidade foi criar interfaces e ferramentas de apoio à análise e ao planejamento de preços.
+    % \item Como resultado, apoiei clientes do Grupo Netshoes a terem uma maior consistência de preços entre regiões e ganhos de margem.
+    % \item \textbf{Stack:} \textit{Oracle APEX, JavaScript (ES6+), HTML5, CSS3, responsividade e integração com APIs REST.}
     % \end{bullets}
     % \end{joblong}
 
-    \begin{joblong}{Engenheiro de Software}{2024 - 2025}
-        \href{https://ravpro.com.br}{\textbf{Ravpro}} fornece \textit{soluções de software para concessionárias de automóveis em todo o Brasil}. A empresa atende algumas das \textit{maiores concessionárias de carros e caminhões do país}.
+    \begin{joblong}{Engenheiro de Software | \href{https://ravpro.com.br}{\textbf{Ravpro}}}{2024 - 2025}
         \begin{bullets}
-            \item \textbf{Desenvolvimento de funcionalidades de backend e frontend} para o RavMenu Web, aumentando oportunidades de upsell e melhorando a tomada de decisão do cliente.
-            \item Desenvolveu e manteve \textbf{integrações de sistema e pipelines ETL para sincronização em tempo real} de dados de veículos, estoque de peças e agendamento de manutenção, bem como extração de dados para sistemas de \textit{Business Intelligence (BI)}.
-            \item Aprimorou habilidades de resolução de problemas e manteve \textbf{comunicação clara e assertiva com equipe e clientes}, seguindo princípios ágeis \textit{Scrum}.
-            \item \textbf{Stack:} \textit{React, NodeJS, Python, PostgreSQL, MongoDB, AWS, Pentaho (ETL).}
+            \item Desenvolvi APIs REST e funcionalidades backend com Node.js, garantindo alta performance e confiabilidade.
+            \item Otimizei consultas PostgreSQL e pipelines ETL para integrações de dados em tempo real.
+            \item Colaborei com equipe ágil seguindo práticas Scrum, participando do design de arquitetura de sistemas distribuídos.
+            \item \textbf{Stack:} \textit{Node.js, React, Python, PostgreSQL, MongoDB, AWS, Pentaho (ETL), integrações REST API}
         \end{bullets}
     \end{joblong}
 
-    \begin{joblong}{Programador Back-End (Pleno)}{2021 - 2023}
-        \href{https://inteliger.com.br}{\textbf{Inteliger}} é especialista em \textbf{e-Commerce}, soluções de varejo com IA e sistemas de \textbf{Business Intelligence (BI) para monitorar vendas, estoque e KPIs operacionais} de grandes redes de farmácias no Brasil.
+    \begin{joblong}{Programador Back-End (Pleno) | \href{https://inteliger.com.br}{\textbf{Inteliger}}}{2021 - 2023}
         \begin{bullets}
-            \item \textbf{Atuei como desenvolvedor principal do projeto Amplius (BI)} e contribui em mais de 10 projetos, desde integrações de pagamento e delivery até desenvolvimento de sistemas de logs e histórico de pedidos.
-            \item Desenvolveu e manteve a plataforma omnichannel Venda Mais (Voai), \textbf{permitindo às farmácias unificar operações de e-commerce, marketplace e televendas}.
-            \item \textbf{Stack:} \textit{Python, Django, PostgreSQL, Redis, Pentaho (ETL), Google Cloud Platform (GCP).}
+            \item Principal desenvolvedor do projeto Amplius (BI), construindo sistemas de logs, histórico de pedidos e integrações de dados para redes de farmácias.
+            \item Implementação de APIs REST escaláveis e otimização de performance com PostgreSQL e Redis.
+            \item Desenvolvimento de pipelines ETL para integração de dados e relatórios estratégicos em tempo real.
+            \item \textbf{Stack:} \textit{Python (Django), PostgreSQL, Redis, Pentaho (ETL), Google Cloud Platform (GCP), REST APIs}
         \end{bullets}
     \end{joblong}
 
@@ -191,11 +192,11 @@
 %---------------------------------------------------------------------------------%
 
 
-    \section{Projetos}
-    \begin{tabularx}{\linewidth}{ @{}l r@{} }
-        \textbf{TodoApp-Java (Java + Spring Boot)} & \hfill \href{https://github.com/JoaoVLima/TodoApp-Java}{Link do Repositório} \\[3.75pt]
-        \multicolumn{2}{@{}X@{}}{Aplicativo CRUD de tarefas implementado com Java Spring Boot, incluindo APIs RESTful, JPA para acesso ao banco de dados e injeção de dependência. Desenvolvido como parte de uma comparação multi-framework (Laravel, Rails, Scotty, .NET), destacando diferenças arquiteturais.} \\
-    \end{tabularx}
+    % \section{Projetos}
+    % \begin{tabularx}{\linewidth}{ @{}l r@{} }
+    %     \textbf{TodoApp-Java (Java + Spring Boot)} & \hfill \href{https://github.com/JoaoVLima/TodoApp-Java}{Link do Repositório} \\[3.75pt]
+    %     \multicolumn{2}{@{}X@{}}{Aplicativo CRUD de tarefas implementado com Java Spring Boot, incluindo APIs RESTful, JPA para acesso ao banco de dados e injeção de dependência. Desenvolvido como parte de uma comparação multi-framework (Laravel, Rails, Scotty, .NET), destacando diferenças arquiteturais.} \\
+    % \end{tabularx}
 
 
 %---------------------------------------------------------------------------------%
@@ -205,27 +206,26 @@
 
     \section{Educação}
     \begin{tabularx}{\linewidth}{@{}l X@{}}
-        2023 -- 2026 & Bacharelado em Ciência da Computação, \textbf{Pontifícia Universidade Católica do Paraná (\href{https://www.pucpr.br}{PUCPR})} \\
-        2016 -- 2018 & Curso Técnico em Tecnologia da Informação, \textbf{Centro Vocacional Irmão Mário Cristóvão (\href{http://www.tecpuc.com.br}{TECPUC})} \\
+        2023 -- Atual & Bacharelado em Ciência da Computação, \href{https://www.pucpr.br}{\textbf{Pontifícia Universidade Católica do Paraná}} \\
+        2016 -- 2018 & Curso Técnico em Tecnologia da Informação, \href{http://www.tecpuc.com.br}{\textbf{Centro Profissional Irmão Mário Cristóvão}} \\
+        2013 -- 2017 & Curso de Inglês Avançado, \href{http://www.influx.com.br}{\textbf{inFlux English School}} \\
     \end{tabularx}
-
-%---------------------------------------------------------------------------------%
-%	PUBLICATIONS
-%---------------------------------------------------------------------------------%
-% \section{Publications}
-% \begin{refsection}[citations.bib]
-% \nocite{*}
-% \printbibliography[heading=none]
-% \end{refsection}
 
 %---------------------------------------------------------------------------------%
 %	SKILLS
 %---------------------------------------------------------------------------------%
-% \section{Skills}
-% \begin{tabularx}{\linewidth}{@{}l X@{}}
-% Technical Skills & Python (Django), Java, C\#, JavaScript, TypeScript, Node.js, React, PostgreSQL, MySQL, Redis, MongoDB, Pentaho (ETL), REST API, Swagger, Git, Linux, Three.js, HTML/CSS, Bootstrap, Vite.js, AWS, GCP. \\
-% Professional Skills & Problem-Solving, Agile Scrum, System Integration, Data Modeling, CI/CD, API Design, Distributed Systems, BI Solutions. \\
-% \end{tabularx}
+
+
+    \section{Competências}
+    \begin{tabularx}{\linewidth}{@{}l X@{}}
+        Programação & Node.js, TypeScript, JavaScript, Python, Java \\
+        Frameworks & React, Django, SpringBoot \\
+        Bancos de Dados & PostgreSQL, MongoDB, MySQL, Redis \\
+        Dados / ETL & Pentaho (ETL), Modelagem de Dados, Soluções de BI \\
+        APIs & REST API, Design de API, Swagger, Integração de Sistemas \\
+        Cloud / DevOps & AWS, GCP, Linux, Git, CI/CD \\
+        Soft Skills & Resolução de Problemas, Metodologias Ágeis (Scrum), Trabalho em Equipe, Comunicação com Cliente \\
+    \end{tabularx}
 
 %---------------------------------------------------------------------------------%
 % EOF
